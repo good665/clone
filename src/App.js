@@ -9,7 +9,7 @@ import { auth } from "./firebase";
 import { useStateValue } from './StateProvider';
 
 function App() {
-  const [ { } ,dispath] = useStateValue();
+  const [ {} ,dispath] = useStateValue();
   useEffect(() => {
     auth.onAuthStateChanged(authUser =>{
       console.log('User is >>>',authUser);

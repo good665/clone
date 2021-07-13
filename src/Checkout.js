@@ -12,7 +12,7 @@ function Checkout() {
                 <img className='checkout__ad' src="https://image9.coupangcdn.com/image/ccm/banner/00b68bb2d92bcbb980348d694d0641fe.jpg" alt=""/>
 
                 <div>
-                    <h3>hello,{user.email}</h3>
+                    <h3>hello,{user?.email}</h3>
                     <h2 className="checkout__title">Your shopping Basket</h2>
                     {basket.map(item =>(
                         <CheckoutProduct
