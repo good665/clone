@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from './StateProvider';
 import { getBasketTotal } from './reducer';
+import { useHistory } from 'react-router-dom';
 //import { SportsBasketball } from '@material-ui/icons';
 
 
 function Subtotal() {
-    const [{basket}, dispath] = useStateValue();
+  const history = useHistory();
+  const [{ basket }, dispatch] = useStateValue();
     return (
         <div className="subtotal">
             <CurrencyFormat
@@ -28,7 +30,7 @@ function Subtotal() {
                 thousandSeparator={true}
                 prefix={"$"}
                 />
-                <button>Proceed to checkout</button>
+                <button onClick={_e => history.push('/payment')}>Proceed to checkout</button>
         </div>
     )
 }
